@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - MedLegal</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <a href="profile.html" class="profile-link">
+                <i class="fas fa-user-circle profile-icon" aria-label="Profile"></i>
+                <span class="profile-tooltip">Profile</span>
+            </a>
+        </div>
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="notifications.html"><i class="fas fa-bell"></i> Notifications <span class="badge">3</span></a></li>
+            <li><a href="medical/medical-upload.html"><i class="fas fa-upload"></i> Upload Record</a></li>
+            <li><a href="medical/medical-view.html"><i class="fas fa-folder-open"></i> View/Edit Records</a></li>
+            <li><a href="medical/record-details.html"><i class="fas fa-file-alt"></i> Record Details</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <section class="main-content">
+        <h1>Your Profile</h1>
+        <div class="profile-container">
+            <div class="profile-header card">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle" aria-label="User Avatar"></i>
+                    <div class="activity-ring">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="54" stroke="#1e40af" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="54" stroke="#3b82f6" stroke-width="8" fill="none" stroke-dasharray="339" stroke-dashoffset="100" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h2>Dr. John Doe</h2>
+                    <p><strong>Role:</strong> Medical Staff</p>
+                    <p><strong>ID:</strong> HOSP-001</p>
+                </div>
+                <button class="btn edit-profile"><i class="fas fa-edit"></i> Edit Profile</button>
+            </div>
+
+            <div class="profile-details card">
+                <h2><i class="fas fa-id-card"></i> Contact Details</h2>
+                <p><strong>Email:</strong> john.doe@hospital.com</p>
+                <p><strong>Contact:</strong> +91 987-654-3210</p>
+                <p><strong>Hospital:</strong> City Hospital</p>
+            </div>
+
+            <div class="profile-stats card">
+                <h2><i class="fas fa-chart-line"></i> Activity Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <p><strong>Records Uploaded</strong></p>
+                        <p class="stat-number">42</p>
+                    </div>
+                    <div class="stat-item">
+                        <p><strong>Consents Approved</strong></p>
+                        <p class="stat-number">15</p>
+                    </div>
+                    <div class="stat-item">
+                        <p><strong>Last Login</strong></p>
+                        <p class="stat-number">2025-04-10</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-actions card">
+                <h2><i class="fas fa-tools"></i> Quick Actions</h2>
+                <div class="action-buttons">
+                    <a href="settings.html" class="btn"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="notifications.html" class="btn"><i class="fas fa-bell"></i> Notifications</a>
+                    <a href="index.html" class="btn deny"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

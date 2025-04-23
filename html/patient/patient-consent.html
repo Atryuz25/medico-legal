@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent Requests - MedLegal</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <a href="../profile.html"><i class="fas fa-user-circle profile-icon"></i></a>
+        </div>
+        <ul>
+            <li><a href="../dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="../notifications.html"><i class="fas fa-bell"></i> Notifications <span class="badge">3</span></a></li>
+            <li><a href="patient-records.html"><i class="fas fa-file-medical"></i> My Records</a></li>
+            <li><a href="patient-consent.html" class="active"><i class="fas fa-check-circle"></i> Consent Requests</a></li>
+            <li><a href="record-details.html"><i class="fas fa-file-alt"></i> Record Details</a></li>
+            <li><a href="../settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <section class="main-content">
+        <h1>Consent Requests</h1>
+        <div class="consent card">
+            <div class="consent-card">
+                <p><strong>Case ID:</strong> MLC-002</p>
+                <p><strong>Requested by:</strong> Lawyer XYZ</p>
+                <p><strong>Date:</strong> 2025-04-05</p>
+                <div class="form-actions">
+                    <button class="btn"><i class="fas fa-check"></i> Allow</button>
+                    <button class="btn deny"><i class="fas fa-times"></i> Deny</button>
+                </div>
+            </div>
+            <button class="btn bulk"><i class="fas fa-check-double"></i> Bulk Approve</button>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Details - MedLegal</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <a href="../profile.html"><i class="fas fa-user-circle profile-icon"></i></a>
+        </div>
+        <ul>
+            <li><a href="../dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="../notifications.html"><i class="fas fa-bell"></i> Notifications <span class="badge">3</span></a></li>
+            <li><a href="medical-upload.html"><i class="fas fa-upload"></i> Upload Record</a></li>
+            <li><a href="medical-view.html"><i class="fas fa-folder-open"></i> View/Edit Records</a></li>
+            <li><a href="record-details.html" class="active"><i class="fas fa-file-alt"></i> Record Details</a></li>
+            <li><a href="../settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <section class="main-content">
+        <h1>Record Details: MLC-001</h1>
+        <div class="record-details card">
+            <h2><i class="fas fa-file-medical"></i> Record Metadata</h2>
+            <p><strong>Patient:</strong> Jane Doe</p>
+            <p><strong>Case Number:</strong> MLC-001</p>
+            <p><strong>Diagnosis:</strong> Fractured Arm</p>
+            <p><strong>Incident Date:</strong> 2025-03-30</p>
+            <p><strong>Uploaded By:</strong> Dr. John Doe</p>
+            <div class="form-actions">
+                <button class="btn"><i class="fas fa-download"></i> Download PDF</button>
+                <button class="btn"><i class="fas fa-edit"></i> Edit Record</button>
+            </div>
+            <h2><i class="fas fa-comment"></i> Annotations</h2>
+            <textarea placeholder="Add a note..."></textarea>
+            <button class="btn"><i class="fas fa-plus"></i> Add Note</button>
+            <div class="note-item">
+                <p><strong>Dr. John:</strong> Reviewed on 2025-04-02</p>
+                <small>2025-04-02 14:00</small>
+            </div>
+            <h2><i class="fas fa-history"></i> Version History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.1</td>
+                        <td>2025-04-03</td>
+                        <td>File Replaced</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

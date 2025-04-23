@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View/Edit Records - MedLegal</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <a href="../profile.html"><i class="fas fa-user-circle profile-icon"></i></a>
+        </div>
+        <ul>
+            <li><a href="../dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="../notifications.html"><i class="fas fa-bell"></i> Notifications <span class="badge">3</span></a></li>
+            <li><a href="medical-upload.html"><i class="fas fa-upload"></i> Upload Record</a></li>
+            <li><a href="medical-view.html" class="active"><i class="fas fa-folder-open"></i> View/Edit Records</a></li>
+            <li><a href="record-details.html"><i class="fas fa-file-alt"></i> Record Details</a></li>
+            <li><a href="../settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <section class="main-content">
+        <h1>View/Edit Records</h1>
+        <div class="view-records card">
+            <div class="filter-bar">
+                <input type="text" class="search-bar" placeholder="Search by Patient, Case No..." list="search-suggestions">
+                <datalist id="search-suggestions">
+                    <option value="Jane Doe">
+                    <option value="MLC-001">
+                </datalist>
+                <select>
+                    <option value="">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                </select>
+            </div>
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Case No.</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr tabindex="0">
+                        <td>Jane Doe</td>
+                        <td><a href="record-details.html">MLC-001</a></td>
+                        <td>2025-04-01</td>
+                        <td>Approved</td>
+                        <td>
+                            <button class="btn-small edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn-small replace"><i class="fas fa-file-upload"></i> Replace</button>
+                            <button class="btn-small delete"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn export"><i class="fas fa-download"></i> Export All</button>
+        </div>
+    </section>
+</body>
+</html>
