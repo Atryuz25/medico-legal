@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - MedLegal</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/patient.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <a href="/html/patient/profile.html" class="profile-link">
+                <i class="fas fa-user-circle profile-icon" aria-label="Profile"></i>
+                <span class="profile-tooltip">View Profile</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/html/patient/dashboard.html" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="/html/patient/patient-records.html"><i class="fas fa-file-medical"></i> <span>My Records</span></a></li>
+                <li><a href="/html/patient/patient-consent.html"><i class="fas fa-handshake"></i> <span>Consent Management</span></a></li>
+                <li><a href="/index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Patient Dashboard</h1>
+        
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <i class="fas fa-file-medical"></i>
+                <h3>My Records</h3>
+                <p class="stat-number">12</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Active Consents</h3>
+                <p class="stat-number">3</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-bell"></i>
+                <h3>Notifications</h3>
+                <p class="stat-number">2</p>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <button onclick="window.location.href='patient-records.html'" class="quick-action-btn">
+                    <i class="fas fa-file-medical"></i>
+                    <span>My Records</span>
+                </button>
+                <button onclick="window.location.href='patient-consent.html'" class="quick-action-btn">
+                    <i class="fas fa-handshake"></i>
+                    <span>Consent Management</span>
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

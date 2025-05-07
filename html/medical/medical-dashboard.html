@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Staff Dashboard - MedLegal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/medical.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <a href="../profile.html" class="profile-link">
+                <i class="fas fa-user-circle profile-icon" aria-label="Profile"></i>
+                <span class="profile-tooltip">View Profile</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="medical-dashboard.html" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="medical-upload.html"><i class="fas fa-upload"></i> <span>Upload Medical</span></a></li>
+                <li><a href="medical-view.html"><i class="fas fa-file-medical"></i> <span>Medical Records</span></a></li>
+                <li><a href="../settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Medical Staff Dashboard</h1>
+        
+
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <button onclick="window.location.href='medical-upload.html'" class="quick-action-btn">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload Medical</span>
+                </button>
+                <button onclick="window.location.href='medical-view.html'" class="quick-action-btn">
+                    <i class="fas fa-file-medical"></i>
+                    <span>Medical Records</span>
+                </button>
+                <button onclick="window.location.href='../settings.html'" class="quick-action-btn">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

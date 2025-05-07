@@ -8,7 +8,10 @@ const authRoutes = require('./routes/auth');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000', // Allow frontend to access the API
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -21,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => {
     console.error('MongoDB connection error:', err);
-    process.exit(1); // Exit if connection fails
+    process.exit(1);
 });
 
 // Routes
@@ -29,9 +32,16 @@ app.use('/api/auth', authRoutes);
 
 // Serve static files
 app.use(express.static(path.join(__dirname, '../html')));
-app.use(express.static(path.join(__dirname, '../css')));;
+app.use(express.static(path.join(__dirname, '../css')));
+app.use(express.static(path.join(__dirname, '../js')));
 
-const PORT = process.env.PORT || 3000;
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: 'Something went wrong!' });
+});
+
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

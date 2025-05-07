@@ -35,7 +35,9 @@
         <div id="error-message" class="error-message"></div>
         <p><a href="register.html">Create Profile</a> | <a href="#" id="request-otp">Request OTP</a> | <a href="#" id="forgot-credentials">Forgot Credentials?</a></p>
     </div>
-    <script>
+    <script type="module">
+        import { login } from '/js/auth.js';
+
         const loginForm = document.getElementById('login-form');
         const errorMessage = document.getElementById('error-message');
 
@@ -46,46 +48,31 @@
             const id = document.getElementById('id').value;
             const password = document.getElementById('password').value;
 
-            try {
-                const response = await fetch('http://localhost:3001/api/auth/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ userType, id, password }),
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    // Store token in localStorage
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('userType', data.userType);
-                    
-                    // Redirect to dashboard
-                    const select = document.getElementById('user-type');
-                    const selectedOption = select.options[select.selectedIndex];
-                    const dashboardUrl = selectedOption.getAttribute('data-href');
-                    window.location.href = dashboardUrl;
-                } else {
-                    errorMessage.textContent = data.message || 'Login failed';
-                    errorMessage.style.display = 'block';
-                }
-            } catch (error) {
-                errorMessage.textContent = 'An error occurred. Please try again.';
+            const result = await login(userType, id, password);
+            
+            if (result.success) {
+                // Redirect to dashboard based on user type
+                const dashboardPaths = {
+                    'admin': '/html/admin/dashboard.html',
+                    'medical': '/html/medical/medical-dashboard.html',
+                    'legal': '/html/legal/legal-dashboard.html',
+                    'patient': '/html/patient/patient-dashboard.html'
+                };
+                
+                window.location.href = dashboardPaths[userType] || '/index.html';
+            } else {
+                errorMessage.textContent = result.message || 'Login failed';
                 errorMessage.style.display = 'block';
             }
         });
 
         document.getElementById('request-otp').addEventListener('click', (e) => {
             e.preventDefault();
-            // Implement OTP request functionality
             alert('OTP request functionality will be implemented soon');
         });
 
         document.getElementById('forgot-credentials').addEventListener('click', (e) => {
             e.preventDefault();
-            // Implement forgot credentials functionality
             alert('Forgot credentials functionality will be implemented soon');
         });
     </script>

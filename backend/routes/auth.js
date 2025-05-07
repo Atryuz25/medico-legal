@@ -4,6 +4,56 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
+// Register route
+router.post('/register', async (req, res) => {
+  try {
+    const { userType, id, password, name, email, phone } = req.body;
+    
+    // Validate input
+    if (!userType || !id || !password || !name || !email || !phone) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+    
+    // Check if user already exists
+    const existingUser = await User.findOne({ $or: [{ id }, { email }] });
+    if (existingUser) {
+      return res.status(400).json({ message: 'User with this ID or email already exists' });
+    }
+    
+    // Create new user
+    const user = new User({
+      userType,
+      id,
+      password,
+      name,
+      email,
+      phone
+    });
+    
+    await user.save();
+    
+    // Create JWT token
+    const token = jwt.sign(
+      { id: user.id, userType: user.userType },
+      process.env.JWT_SECRET,
+      { expiresIn: '24h' }
+    );
+    
+    res.status(201).json({
+      token,
+      userType: user.userType,
+      message: 'Registration successful'
+    });
+    
+  } catch (error) {
+    console.error('Registration error:', error);
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ message: 'Invalid input data' });
+    }
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 // Login route
 router.post('/login', async (req, res) => {
   try {

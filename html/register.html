@@ -51,7 +51,9 @@
         <div id="error-message" class="error-message"></div>
         <p>Already have an account? <a href="index.html">Login here</a></p>
     </div>
-    <script>
+    <script type="module">
+        import { register } from '/js/auth.js';
+
         const registerForm = document.getElementById('register-form');
         const errorMessage = document.getElementById('error-message');
 
@@ -73,33 +75,22 @@
                 return;
             }
 
-            try {
-                const response = await fetch('http://localhost:3001/api/auth/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ 
-                        userType,
-                        id,
-                        password,
-                        name,
-                        email,
-                        phone
-                    }),
-                });
 
-                const data = await response.json();
+            const result = await register({
+                userType,
+                id,
+                password,
+                name,
+                email,
+                phone
+            });
 
-                if (response.ok) {
-                    alert('Profile created successfully! You can now login.');
-                    window.location.href = 'index.html';
-                } else {
-                    errorMessage.textContent = data.message || 'Registration failed';
-                    errorMessage.style.display = 'block';
-                }
-            } catch (error) {
-                errorMessage.textContent = 'An error occurred. Please try again.';
+
+            if (result.success) {
+                alert('Profile created successfully! You can now login.');
+                window.location.href = 'index.html';
+            } else {
+                errorMessage.textContent = result.message || 'Registration failed';
                 errorMessage.style.display = 'block';
             }
         });

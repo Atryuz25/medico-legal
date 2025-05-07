@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Dashboard - MedLegal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/legal.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <a href="../profile.html" class="profile-link">
+                <i class="fas fa-user-circle profile-icon" aria-label="Profile"></i>
+                <span class="profile-tooltip">View Profile</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/html/legal/dashboard.html" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="/html/legal/request.html"><i class="fas fa-hand-paper"></i> <span>Request Access</span></a></li>
+                <li><a href="/html/legal/cases.html"><i class="fas fa-gavel"></i> <span>View Cases</span></a></li>
+                <li><a href="/html/legal/calendar.html"><i class="fas fa-calendar"></i> <span>Calendar</span></a></li>
+                <li><a href="/html/settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                <li><a href="/index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Legal Dashboard</h1>
+        
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <i class="fas fa-gavel"></i>
+                <h3>Active Cases</h3>
+                <p class="stat-number">24</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-file-medical"></i>
+                <h3>Medical Records</h3>
+                <p class="stat-number">156</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-bell"></i>
+                <h3>Pending Requests</h3>
+                <p class="stat-number">5</p>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <button onclick="window.location.href='request.html'" class="quick-action-btn">
+                    <i class="fas fa-hand-paper"></i>
+                    <span>Request Access</span>
+                </button>
+                <button onclick="window.location.href='cases.html'" class="quick-action-btn">
+                    <i class="fas fa-gavel"></i>
+                    <span>View Cases</span>
+                </button>
+                <button onclick="window.location.href='calendar.html'" class="quick-action-btn">
+                    <i class="fas fa-calendar"></i>
+                    <span>Calendar</span>
+                </button>
+                <button onclick="window.location.href='../settings.html'" class="quick-action-btn">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

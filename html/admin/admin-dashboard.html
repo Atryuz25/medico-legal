@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MedLegal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <a href="../profile.html" class="profile-link">
+                <i class="fas fa-user-circle profile-icon" aria-label="Profile"></i>
+                <span class="profile-tooltip">View Profile</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/html/admin/dashboard.html" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="/html/admin/users.html"><i class="fas fa-users"></i> <span>Manage Users</span></a></li>
+                <li><a href="/html/admin/logs.html"><i class="fas fa-clipboard-list"></i> <span>Audit Logs</span></a></li>
+                <li><a href="/html/settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                <li><a href="/index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <div class="dashboard-actions">
+                <button class="btn btn-primary" onclick="window.location.href='/html/admin/settings.html'">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+        </div>
+        
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Total Users</h3>
+                    <p class="stat-number">1,234</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Medical Records</h3>
+                    <p class="stat-number">5,678</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Legal Cases</h3>
+                    <p class="stat-number">890</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <button onclick="window.location.href='/html/admin/users.html'" class="quick-action-btn">
+                    <i class="fas fa-users"></i>
+                    <span>Manage Users</span>
+                </button>
+                <button onclick="window.location.href='/html/admin/logs.html'" class="quick-action-btn">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Audit Logs</span>
+                </button>
+                <button onclick="window.location.href='/html/settings.html'" class="quick-action-btn">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
