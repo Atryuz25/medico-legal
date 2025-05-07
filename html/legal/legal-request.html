@@ -26,26 +26,18 @@
 
     <section class="main-content">
         <h1>Request Record Access</h1>
-        <div class="request-form card">
-            <form>
-                <div class="form-group">
-                    <label>Case ID *</label>
-                    <input type="text" required list="case-suggestions">
-                    <datalist id="case-suggestions">
-                        <option value="MLC-001">
-                        <option value="MLC-002">
-                    </datalist>
-                </div>
-                <div class="form-group">
-                    <label>Patient Name *</label>
-                    <input type="text" required>
-                </div>
-                <div class="form-group">
-                    <label>Reason for Request *</label>
-                    <textarea required></textarea>
-                </div>
-                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Submit Request</button>
-            </form>
+        <div class="quick-actions-container card">
+            <h2><i class="fas fa-file-signature"></i> Choose Request Type</h2>
+            <div class="quick-actions">
+                <a href="legal-req-hospital.html" class="quick-action-btn">
+                    <i class="fas fa-hospital"></i>
+                    <span>Request Access via Hospital</span>
+                </a>
+                <a href="legal-req-patient.html" class="quick-action-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Request Access via Patient</span>
+                </a>
+            </div>
         </div>
     </section>
 </body>
